@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skenarasa - Catering for Every Occasion</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',sans-serif;color:#1a1a1a;background:#fff}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#fff;position:sticky;top:0;box-shadow:0 2px 12px rgba(0,0,0,.06);z-index:100}
+    .logo{font-size:1.6rem;font-weight:800;color:#c0392b;letter-spacing:1px}
+    .logo span{color:#f39c12}
+    nav a{text-decoration:none;color:#555;font-weight:500;margin-left:28px;transition:color .2s}
+    nav a:hover{color:#c0392b}
+    .nav-cta{background:#c0392b;color:#fff!important;padding:10px 22px;border-radius:25px;font-weight:600}
+    .nav-cta:hover{background:#a93226!important}
+    .hero{display:flex;align-items:center;justify-content:space-between;padding:80px 60px;background:linear-gradient(135deg,#fff8f0,#fff);min-height:90vh;gap:40px}
+    .hero-text{max-width:560px}
+    .hero-badge{display:inline-block;background:#fef3e2;color:#e67e22;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase}
+    .hero h1{font-size:3.2rem;font-weight:900;line-height:1.15;color:#1a1a1a;margin-bottom:20px}
+    .hero h1 span{color:#c0392b}
+    .hero p{font-size:1.15rem;color:#555;line-height:1.7;margin-bottom:36px}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-primary{background:#c0392b;color:#fff;padding:16px 36px;border-radius:30px;font-size:1rem;font-weight:700;text-decoration:none;transition:background .2s,transform .2s;display:inline-block}
+    .btn-primary:hover{background:#a93226;transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:#c0392b;padding:16px 36px;border-radius:30px;font-size:1rem;font-weight:700;text-decoration:none;border:2px solid #c0392b;transition:all .2s;display:inline-block}
+    .btn-secondary:hover{background:#c0392b;color:#fff}
+    .hero-image{flex:1;max-width:480px;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+    .hero-placeholder{width:100%;height:420px;background:linear-gradient(135deg,#f39c12,#c0392b);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:5rem}
+    .hero-placeholder p{font-size:1rem;margin-top:12px;opacity:.85}
+    .social-proof{background:#c0392b;color:#fff;padding:28px 60px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
+    .stat{text-align:center}
+    .stat strong{display:block;font-size:2rem;font-weight:900}
+    .stat span{font-size:.9rem;opacity:.85}
+    .section{padding:80px 60px}
+    .section-label{text-align:center;font-size:.8rem;font-weight:700;color:#e67e22;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+    .section h2{text-align:center;font-size:2.2rem;font-weight:800;color:#1a1a1a;margin-bottom:16px}
+    .section-sub{text-align:center;color:#777;font-size:1.05rem;max-width:520px;margin:0 auto 56px}
+    .steps{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+    .step{background:#fff;border:1px solid #f0e8e8;border-radius:20px;padding:36px 28px;max-width:260px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .2s}
+    .step:hover{transform:translateY(-6px)}
+    .step-num{width:52px;height:52px;background:#fef3e2;color:#e67e22;border-radius:50%;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .step h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+    .step p{color:#777;font-size:.95rem;line-height:1.6}
+    .menu-section{background:#fff8f0;padding:80px 60px}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+    .menu-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .2s}
+    .menu-card:hover{transform:translateY(-6px)}
+    .menu-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+    .menu-card-body{padding:20px}
+    .menu-card-body h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+    .menu-card-body p{color:#888;font-size:.9rem;line-height:1.5}
+    .tag{display:inline-block;background:#fef3e2;color:#e67e22;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:10px}
+    .testimonials{padding:80px 60px;background:#fff}
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:1000px;margin:0 auto}
+    .testi-card{background:#fff8f0;border-radius:20px;padding:32px;border-left:4px solid #c0392b}
+    .stars{color:#f39c12;font-size:1.1rem;margin-bottom:14px}
+    .testi-card p{color:#444;font-size:.98rem;line-height:1.7;margin-bottom:20px}
+    .testi-author{display:flex;align-items:center;gap:12px}
+    .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#f39c12,#c0392b);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem}
+    .testi-author strong{display:block;font-size:.95rem}
+    .testi-author span{font-size:.82rem;color:#999}
+    .lead-section{background:linear-gradient(135deg,#c0392b,#922b21);padding:80px 60px;color:#fff}
+    .lead-inner{max-width:680px;margin:0 auto;text-align:center}
+    .lead-inner .section-label{color:#f9c74f}
+    .lead-inner h2{color:#fff;font-size:2.4rem;margin-bottom:14px}
+    .lead-inner > p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:40px}
+    .lead-form{background:#fff;border-radius:24px;padding:40px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-group{margin-bottom:18px}
+    .form-group label{display:block;font-size:.85rem;font-weight:600;color:#333;margin-bottom:6px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:.95rem;color:#1a1a1a;transition:border-color .2s;outline:none;font-family:inherit}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#c0392b}
+    .form-group textarea{resize:vertical;min-height:90px}
+    .form-submit{width:100%;background:#c0392b;color:#fff;border:none;padding:16px;border-radius:30px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px}
+    .form-submit:hover{background:#a93226;transform:translateY(-2px)}
+    .form-note{text-align:center;font-size:.8rem;color:#aaa;margin-top:14px}
+    .form-note span{color:#c0392b}
+    .success-msg{display:none;background:#eafaf1;border:1.5px solid #27ae60;border-radius:12px;padding:20px;text-align:center;color:#1e8449;font-weight:600;margin-top:16px}
+    .faq-section{padding:80px 60px;background:#fff}
+    .faq-list{max-width:720px;margin:0 auto}
+    .faq-item{border-bottom:1px solid #f0e8e8;padding:22px 0;cursor:pointer}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:1rem;color:#1a1a1a}
+    .faq-q .icon{font-size:1.3rem;color:#c0392b;transition:transform .3s}
+    .faq-a{color:#666;font-size:.95rem;line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+    .faq-item.open .faq-a{max-height:200px;padding-top:12px}
+    .faq-item.open .icon{transform:rotate(45deg)}
+    footer{background:#1a1a1a;color:#aaa;text-align:center;padding:36px 60px;font-size:.9rem}
+    footer strong{color:#fff}
+    footer a{color:#f39c12;text-decoration:none}
+    @media(max-width:768px){
+      nav{padding:16px 24px}
+      .hero{flex-direction:column;padding:50px 24px;text-align:center}
+      .hero h1{font-size:2.2rem}
+      .hero-actions{justify-content:center}
+      .hero-image{max-width:100%}
+      .social-proof{padding:24px;gap:32px}
+      .section,.menu-section,.testimonials,.lead-section,.faq-section{padding:56px 24px}
+      .form-row{grid-template-columns:1fr}
+      .lead-form{padding:28px 20px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Skena<span>rasa</span></div>
+  <div>
+    <a href="#how">How It Works</a>
+    <a href="#menu">Menu</a>
+    <a href="#lead" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">Online Catering, Delivered</div>
+    <h1>Delicious Food for <span>Every Occasion</span>, Ordered Online</h1>
+    <p>Skenarasa brings restaurant-quality catering straight to your event — weddings, corporate gatherings, birthdays, and more. Browse menus, customize your order, and get it delivered. No hassle, just great food.</p>
+    <div class="hero-actions">
+      <a href="#lead" class="btn-primary">Get a Free Quote &rarr;</a>
+      <a href="#menu" class="btn-secondary">See Our Menu</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-placeholder">
+      &#127857;
+      <p>Skenarasa Catering</p>
+    </div>
+  </div>
+</section>
+
+<div class="social-proof">
+  <div class="stat"><strong>500+</strong><span>Events Catered</span></div>
+  <div class="stat"><strong>98%</strong><span>Happy Clients</span></div>
+  <div class="stat"><strong>50+</strong><span>Menu Options</span></div>
+  <div class="stat"><strong>24h</strong><span>Quote Turnaround</span></div>
+</div>
+
+<section class="section" id="how">
+  <div class="section-label">Simple Process</div>
+  <h2>How Skenarasa Works</h2>
+  <p class="section-sub">From browsing to delivery &mdash; we make catering effortless.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Tell Us Your Event</h3>
+      <p>Fill in your event details &mdash; date, guest count, and occasion type &mdash; in under 2 minutes.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Pick Your Menu</h3>
+      <p>Choose from our curated menus or let our team craft a custom spread just for you.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>We Deliver &amp; Set Up</h3>
+      <p>Our team arrives on time, sets everything up, and ensures your guests are wowed.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Enjoy the Moment</h3>
+      <p>Relax and enjoy your event while we handle all the food logistics.</p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="section-label">What We Serve</div>
+  <h2>A Taste of Our Menu</h2>
+  <p class="section-sub">Crafted with fresh ingredients, inspired by local and international flavors.</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-thumb" style="background:#fff3e0">&#129368;</div>
+      <div class="menu-card-body">
+        <h3>Nusantara Feast</h3>
+        <p>A rich spread of Indonesian classics &mdash; rendang, soto, nasi uduk, and more.</p>
+        <span class="tag">Most Popular</span>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-thumb" style="background:#e8f5e9">&#129367;</div>
+      <div class="menu-card-body">
+        <h3>Garden Fresh</h3>
+        <p>Light, vibrant salads and vegetarian dishes perfect for health-conscious guests.</p>
+        <span class="tag">Vegetarian</span>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-thumb" style="background:#fce4ec">&#127842;</div>
+      <div class="menu-card-body">
+        <h3>Finger Food &amp; Canapes</h3>
+        <p>Elegant bite-sized selections ideal for cocktail parties and corporate events.</p>
+        <span class="tag">Corporate</span>
+      </div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-thumb" style="background:#e3f2fd">&#127874;</div>
+      <div class="menu-card-body">
+        <h3>Celebration Package</h3>
+        <p>Full-course dining experience for weddings, birthdays, and milestone events.</p>
+        <span class="tag">Premium</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="section-label">What People Say</div>
+  <h2>Loved by Event Hosts</h2>
+  <p class="section-sub">Real feedback from people who trusted Skenarasa for their special moments.</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"Skenarasa made our wedding reception absolutely unforgettable. The food was incredible and the team was so professional. Every guest kept asking who catered the event!"</p>
+      <div class="testi-author">
+        <div class="avatar">A</div>
+        <div><strong>Anisa Rahma</strong><span>Wedding, Jakarta</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"We used Skenarasa for our company's annual dinner. Ordering online was super easy, the delivery was on time, and the food quality was top-notch. Will definitely use again."</p>
+      <div class="testi-author">
+        <div class="avatar">B</div>
+        <div><strong>Budi Santoso</strong><span>Corporate Event, Surabaya</span></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p>"I was skeptical about ordering catering online but Skenarasa completely changed my mind. The process was seamless and the food tasted like it came from a 5-star restaurant."</p>
+      <div class="testi-author">
+        <div class="avatar">D</div>
+        <div><strong>Dewi Lestari</strong><span>Birthday Party, Bandung</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lead-section" id="lead">
+  <div class="lead-inner">
+    <div class="section-label">Get Started Today</div>
+    <h2>Get Your Free Catering Quote</h2>
+    <p>Tell us about your event and we'll get back to you within 24 hours with a personalized menu and pricing &mdash; completely free, no commitment.</p>
+    <div class="lead-form">
+      <form id="leadForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" placeholder="e.g. Budi Santoso" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">WhatsApp / Phone *</label>
+            <input type="tel" id="phone" placeholder="e.g. 0812-3456-7890" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="you@email.com" required />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="etype">Event Type *</label>
+            <select id="etype" required>
+              <option value="" disabled selected>Select event type</option>
+              <option>Wedding / Reception</option>
+              <option>Corporate Event</option>
+              <option>Birthday Party</option>
+              <option>Arisan / Gathering</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Estimated Guests *</label>
+            <select id="guests" required>
+              <option value="" disabled selected>Select range</option>
+              <option>Under 50 guests</option>
+              <option>50 - 100 guests</option>
+              <option>100 - 300 guests</option>
+              <option>300 - 500 guests</option>
+              <option>500+ guests</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edate">Event Date</label>
+          <input type="date" id="edate" />
+        </div>
+        <div class="form-group">
+          <label for="notes">Anything else we should know?</label>
+          <textarea id="notes" placeholder="Dietary restrictions, theme, special requests..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send My Free Quote Request</button>
+        <p class="form-note">Your info is safe with us. <span>No spam, ever.</span></p>
+      </form>
+      <div class="success-msg" id="successMsg">
+        Thank you! We have received your request and will reach out within 24 hours.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="section-label">Questions</div>
+  <h2>Frequently Asked Questions</h2>
+  <p class="section-sub" style="margin-bottom:40px">Everything you need to know before booking.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">How far in advance should I book? <span class="icon">+</span></div>
+      <div class="faq-a">We recommend booking at least 2 weeks in advance for smaller events and 4-6 weeks for large events like weddings. That said, we do our best to accommodate last-minute requests.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you serve outside Jakarta? <span class="icon">+</span></div>
+      <div class="faq-a">Yes! We currently serve Jakarta, Bogor, Depok, Tangerang, and Bekasi (Jabodetabek). We are expanding to other cities &mdash; drop us a message to check availability in your area.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I customize the menu? <span class="icon">+</span></div>
+      <div class="faq-a">Absolutely. We love working with clients to create a menu that fits their taste, dietary needs, and budget. Just mention it in your quote request.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is included in the catering package? <span class="icon">+</span></div>
+      <div class="faq-a">Our packages typically include food preparation, delivery, setup, serving equipment, and cleanup. Specific inclusions depend on the package you choose.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a minimum order? <span class="icon">+</span></div>
+      <div class="faq-a">Our minimum is 30 guests. For smaller gatherings, we offer a curated drop-off service &mdash; ask us about it when you request a quote.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:8px"><strong>Skenarasa</strong> &mdash; Catering for Every Occasion</p>
+  <p>Questions? Reach us at <a href="mailto:hello@skenarasa.id">hello@skenarasa.id</a> or WhatsApp <a href="https://wa.me/6281234567890">0812-3456-7890</a></p>
+  <p style="margin-top:16px;opacity:.5;font-size:.8rem">&copy; 2026 Skenarasa. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  function handleSubmit(e){
+    e.preventDefault();
+    document.getElementById('leadForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.querySelector(a.getAttribute('href'));
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
