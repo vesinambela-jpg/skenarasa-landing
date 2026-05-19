@@ -69,7 +69,6 @@
     .lead-inner h2{color:#fff;font-size:2.4rem;margin-bottom:14px}
     .lead-inner > p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:40px}
     .lead-form{background:#fff;border-radius:24px;padding:40px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.2)}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .form-group{margin-bottom:18px}
     .form-group label{display:block;font-size:.85rem;font-weight:600;color:#333;margin-bottom:6px}
     .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:.95rem;color:#1a1a1a;transition:border-color .2s;outline:none;font-family:inherit}
@@ -104,15 +103,26 @@
     .privacy-box strong{color:#1a1a1a}
     .privacy-close{margin-top:24px;background:#c0392b;color:#fff;border:none;padding:12px 32px;border-radius:30px;font-size:.95rem;font-weight:700;cursor:pointer;display:block;width:100%;transition:background .2s}
     .privacy-close:hover{background:#a93226}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     /* HERO WITH FORM */
-    .hero-with-form{display:flex;align-items:flex-start;justify-content:space-between;padding:80px 60px;background:linear-gradient(135deg,#fff8f0,#fff);gap:48px}
-    .hero-with-form .hero-text{max-width:520px;padding-top:20px}
-    .hero-form-card{flex:0 0 380px;background:#fff;border-radius:24px;padding:36px;box-shadow:0 12px 48px rgba(0,0,0,.12);border:1px solid #f0e8e8}
-    .hero-form-card h3{font-size:1.2rem;font-weight:800;color:#1a1a1a;margin-bottom:6px}
-    .hero-form-card p{font-size:.9rem;color:#888;margin-bottom:24px}
+    .hero-with-form{display:grid;grid-template-columns:1fr 420px;min-height:100vh;background:#1a1a1a}
+    .hero-image-side{position:relative;overflow:hidden}
+    .hero-image-side img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
+    .hero-image-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,26,.7) 0%,rgba(192,57,43,.4) 100%)}
+    .hero-text-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:60px}
+    .hero-badge{display:inline-block;background:rgba(243,156,18,.2);color:#f39c12;font-size:.75rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:24px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(243,156,18,.4);width:fit-content}
+    .hero-text-over h1{font-size:3rem;font-weight:900;line-height:1.15;color:#fff;margin-bottom:20px;max-width:520px}
+    .hero-text-over h1 span{color:#f39c12}
+    .hero-text-over p{font-size:1.1rem;color:rgba(255,255,255,.8);line-height:1.8;max-width:480px}
+    .hero-form-side{background:#fff;display:flex;flex-direction:column;justify-content:center;padding:56px 48px}
+    .hero-form-side h3{font-size:1.4rem;font-weight:800;color:#1a1a1a;margin-bottom:8px}
+    .hero-form-side > p{font-size:.95rem;color:#888;margin-bottom:32px;line-height:1.6}
     @media(max-width:900px){
-      .hero-with-form{flex-direction:column;padding:50px 24px}
-      .hero-form-card{flex:none;width:100%}
+      .hero-with-form{grid-template-columns:1fr;min-height:auto}
+      .hero-image-side{height:320px}
+      .hero-text-over{padding:36px 24px}
+      .hero-text-over h1{font-size:2rem}
+      .hero-form-side{padding:40px 24px}
     }
     .faq-section{padding:80px 60px;background:#fff}
     .faq-list{max-width:720px;margin:0 auto}
@@ -195,15 +205,16 @@
 
 <!-- HERO + LEAD FORM -->
 <section class="hero-with-form" id="lead">
-  <div class="hero-text">
-    <div class="hero-badge">Online Catering, Delivered</div>
-    <h1>Delicious Food for <span>Every Occasion</span>, Ordered Online</h1>
-    <p>Skenarasa brings restaurant-quality catering straight to your event — weddings, corporate gatherings, birthdays, and more. Browse menus, customize your order, and get it delivered. No hassle, just great food.</p>
-    <div class="hero-actions">
-      <a href="#how" class="btn-secondary">See How It Works</a>
+  <div class="hero-image-side">
+    <img src="https://drive.google.com/thumbnail?id=1vJtce9tilMl-tCTVVRXeyKN_RLaqMW_N&sz=w1200" alt="Skenarasa catering spread" />
+    <div class="hero-image-overlay"></div>
+    <div class="hero-text-over">
+      <div class="hero-badge">Online Catering, Delivered</div>
+      <h1>Great Food for <span>Every Occasion</span></h1>
+      <p>Skenarasa brings restaurant-quality catering straight to your event. Browse menus, pick your order, and get it delivered. No hassle, just great food.</p>
     </div>
   </div>
-  <div class="hero-form-card">
+  <div class="hero-form-side">
     <h3>Be the First to Know</h3>
     <p>Drop your details and get an exclusive early-bird offer when we launch.</p>
     <form id="leadForm" onsubmit="handleSubmit(event)">
@@ -229,12 +240,7 @@
   </div>
 </section>
 
-<div class="social-proof">
-  <div class="stat"><strong>500+</strong><span>Events Catered</span></div>
-  <div class="stat"><strong>98%</strong><span>Happy Clients</span></div>
-  <div class="stat"><strong>50+</strong><span>Menu Options</span></div>
-  <div class="stat"><strong>24h</strong><span>Quote Turnaround</span></div>
-</div>
+
 
 <section class="section" id="how">
   <div class="section-label">Simple Process</div>
@@ -304,37 +310,7 @@
   </div>
 </section>
 
-<section class="testimonials">
-  <div class="section-label">What People Say</div>
-  <h2>Loved by Event Hosts</h2>
-  <p class="section-sub">Real feedback from people who trusted Skenarasa for their special moments.</p>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"Skenarasa made our wedding reception absolutely unforgettable. The food was incredible and the team was so professional. Every guest kept asking who catered the event!"</p>
-      <div class="testi-author">
-        <div class="avatar">A</div>
-        <div><strong>Anisa Rahma</strong><span>Wedding, Jakarta</span></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"We used Skenarasa for our company's annual dinner. Ordering online was super easy, the delivery was on time, and the food quality was top-notch. Will definitely use again."</p>
-      <div class="testi-author">
-        <div class="avatar">B</div>
-        <div><strong>Budi Santoso</strong><span>Corporate Event, Surabaya</span></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"I was skeptical about ordering catering online but Skenarasa completely changed my mind. The process was seamless and the food tasted like it came from a 5-star restaurant."</p>
-      <div class="testi-author">
-        <div class="avatar">D</div>
-        <div><strong>Dewi Lestari</strong><span>Birthday Party, Bandung</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 
