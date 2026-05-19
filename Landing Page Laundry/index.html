@@ -404,6 +404,12 @@
   }
 
   function showThankYou(){
+    // Fire dataLayer event for GTM (Meta Pixel, GA4, Google Ads)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'lead_form_submit',
+      form_name: 'skenarasa_lead_form'
+    });
     document.getElementById('thankYouPopup').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
