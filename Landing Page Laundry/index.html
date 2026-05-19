@@ -54,6 +54,50 @@
     .menu-card-body h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
     .menu-card-body p{color:#888;font-size:.9rem;line-height:1.5}
     .tag{display:inline-block;background:#AC0000;color:#fff;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:10px}
+    /* PRICING */
+    .pricing-section{background:#f9f9f9;padding:80px 60px}
+    .pricing-tabs{display:flex;gap:12px;justify-content:center;margin-bottom:48px;flex-wrap:wrap}
+    .pricing-tab{padding:10px 24px;border-radius:30px;border:2px solid #e0e0e0;background:#fff;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;color:#555}
+    .pricing-tab.active,.pricing-tab:hover{background:#AC0000;border-color:#AC0000;color:#fff}
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+    .pricing-card{background:#fff;border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(0,0,0,.07);border:2px solid transparent;transition:all .2s;position:relative}
+    .pricing-card:hover{border-color:#AC0000;transform:translateY(-4px)}
+    .pricing-card.featured{border-color:#AC0000;background:#fff}
+    .featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#AC0000;color:#fff;font-size:.7rem;font-weight:800;padding:4px 16px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+    .pricing-card h3{font-size:1rem;font-weight:800;color:#000;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+    .pricing-card .price{font-size:2rem;font-weight:900;color:#AC0000;margin:16px 0 4px;line-height:1}
+    .pricing-card .price-sub{font-size:.82rem;color:#aaa;margin-bottom:20px}
+    .pricing-card ul{list-style:none;padding:0}
+    .pricing-card ul li{font-size:.88rem;color:#555;padding:6px 0;border-bottom:1px solid #f5f5f5;display:flex;align-items:center;gap:8px}
+    .pricing-card ul li:last-child{border-bottom:none}
+    .pricing-card ul li::before{content:"";width:6px;height:6px;background:#AC0000;border-radius:50%;flex-shrink:0}
+    .pricing-cta{display:block;text-align:center;margin-top:24px;background:#000;color:#fff;padding:12px;border-radius:30px;font-size:.9rem;font-weight:700;text-decoration:none;transition:background .2s;cursor:pointer;border:none;width:100%}
+    .pricing-cta:hover{background:#AC0000}
+    .pricing-card.featured .pricing-cta{background:#AC0000}
+    .pricing-card.featured .pricing-cta:hover{background:#8a0000}
+    .group-section{background:#000;padding:64px 60px;margin-top:0}
+    .group-inner{max-width:900px;margin:0 auto;text-align:center}
+    .group-inner .section-label{color:#AC0000}
+    .group-inner h2{color:#fff;font-size:2rem;font-weight:900;margin-bottom:12px}
+    .group-inner > p{color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:40px}
+    .group-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .group-card{background:#1a1a1a;border-radius:16px;padding:28px 24px;text-align:center;border:1px solid #333;transition:border-color .2s}
+    .group-card:hover{border-color:#AC0000}
+    .group-card h3{color:#fff;font-size:1rem;font-weight:800;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+    .group-card .gpax{color:#AC0000;font-size:.85rem;font-weight:700;margin-bottom:16px}
+    .group-card .gprice{color:#fff;font-size:1.8rem;font-weight:900;margin-bottom:4px}
+    .group-card .gper{color:#aaa;font-size:.8rem}
+    .pr-box{background:#AC0000;border-radius:20px;padding:36px;margin-top:28px;text-align:left;display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+    .pr-box-text h3{color:#fff;font-size:1.2rem;font-weight:900;margin-bottom:8px}
+    .pr-box-text p{color:rgba(255,255,255,.85);font-size:.9rem;line-height:1.7}
+    .pr-box-price{text-align:center;flex-shrink:0}
+    .pr-box-price strong{display:block;color:#fff;font-size:2.2rem;font-weight:900;line-height:1}
+    .pr-box-price span{color:rgba(255,255,255,.7);font-size:.8rem}
+    @media(max-width:768px){
+      .group-grid{grid-template-columns:1fr}
+      .pr-box{flex-direction:column;gap:20px}
+      .pricing-section,.group-section{padding:56px 24px}
+    }
     .testimonials{padding:80px 60px;background:#fff}
     .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:1000px;margin:0 auto}
     .testi-card{background:#fff8f0;border-radius:20px;padding:32px;border-left:4px solid #c0392b}
@@ -270,41 +314,108 @@
   </div>
 </section>
 
-<section class="menu-section" id="menu">
-  <div class="section-label">What We Serve</div>
-  <h2>A Taste of Our Menu</h2>
-  <p class="section-sub">Crafted with fresh ingredients, inspired by local and international flavors.</p>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <div class="menu-thumb" style="background:#fff3e0">&#129368;</div>
-      <div class="menu-card-body">
-        <h3>Nusantara Feast</h3>
-        <p>A rich spread of Indonesian classics &mdash; rendang, soto, nasi uduk, and more.</p>
-        <span class="tag">Most Popular</span>
+<section class="pricing-section" id="menu">
+  <div class="section-label">Paket Langganan</div>
+  <h2>Pilih Paket Kamu</h2>
+  <p class="section-sub">Makan siang setiap hari, tanpa ribet. Mulai dari Rp31.500/meal.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Weekly 5 Days</h3>
+      <div class="price">Rp175.000</div>
+      <div class="price-sub">Rp35.000 / meal &bull; 5 hari makan siang</div>
+      <ul>
+        <li>Senin &ndash; Jumat</li>
+        <li>1 porsi makan siang / hari</li>
+        <li>Menu berganti setiap hari</li>
+        <li>Dikirim ke lokasi kamu</li>
+      </ul>
+      <button class="pricing-cta" onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">Daftar Sekarang</button>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="featured-badge">Paling Hemat</div>
+      <h3>Weekly 7 Days</h3>
+      <div class="price">Rp238.000</div>
+      <div class="price-sub">Rp34.000 / meal &bull; 7 hari makan siang</div>
+      <ul>
+        <li>Senin &ndash; Minggu</li>
+        <li>1 porsi makan siang / hari</li>
+        <li>Menu berganti setiap hari</li>
+        <li>Dikirim ke lokasi kamu</li>
+      </ul>
+      <button class="pricing-cta" onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">Daftar Sekarang</button>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Monthly 20 Days</h3>
+      <div class="price">Rp640.000</div>
+      <div class="price-sub">Rp32.000 / meal &bull; 20 hari makan siang</div>
+      <ul>
+        <li>Hari kerja sebulan penuh</li>
+        <li>1 porsi makan siang / hari</li>
+        <li>Menu berganti setiap hari</li>
+        <li>Dikirim ke lokasi kamu</li>
+      </ul>
+      <button class="pricing-cta" onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">Daftar Sekarang</button>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Monthly 28 Days</h3>
+      <div class="price">Rp945.000</div>
+      <div class="price-sub">Rp31.500 / meal &bull; 28 hari makan siang</div>
+      <ul>
+        <li>Sebulan penuh tanpa jeda</li>
+        <li>1 porsi makan siang / hari</li>
+        <li>Menu berganti setiap hari</li>
+        <li>Dikirim ke lokasi kamu</li>
+      </ul>
+      <button class="pricing-cta" onclick="document.getElementById('lead').scrollIntoView({behavior:'smooth'})">Daftar Sekarang</button>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:28px;font-size:.85rem;color:#aaa">
+    Add-on sarapan tersedia &mdash; <strong style="color:#AC0000">Rp25.000/meal</strong>, slot terbatas.
+  </p>
+</section>
+
+<section class="group-section">
+  <div class="group-inner">
+    <div class="section-label">Untuk Tim &amp; Kantor</div>
+    <h2>Big Feast</h2>
+    <p>Makan siang bareng tim, gathering, atau acara internal? Kami siap handle semuanya.</p>
+    <div class="group-grid">
+      <div class="group-card">
+        <h3>Single</h3>
+        <div class="gpax">25 pax</div>
+        <div class="gprice">Rp875.000</div>
+        <div class="gper">Rp35.000 / orang</div>
+      </div>
+      <div class="group-card">
+        <h3>Duo</h3>
+        <div class="gpax">50 pax</div>
+        <div class="gprice">Rp1.700.000</div>
+        <div class="gper">Rp34.000 / orang</div>
+      </div>
+      <div class="group-card">
+        <h3>Band</h3>
+        <div class="gpax">100 pax</div>
+        <div class="gprice">Rp3.300.000</div>
+        <div class="gper">Rp33.000 / orang</div>
       </div>
     </div>
-    <div class="menu-card">
-      <div class="menu-thumb" style="background:#e8f5e9">&#129367;</div>
-      <div class="menu-card-body">
-        <h3>Garden Fresh</h3>
-        <p>Light, vibrant salads and vegetarian dishes perfect for health-conscious guests.</p>
-        <span class="tag">Vegetarian</span>
+
+    <div class="pr-box">
+      <div class="pr-box-text">
+        <h3>Launch PR Package</h3>
+        <p>
+          Mie Brisket Jawa + minuman pilihan (Dituku Kopinya / Matchalalu) + sticker collab Tahulalat + cutlery portable + thank you note dengan QR.<br>
+          <strong style="color:#fff">Min. 10 pax. Slot sangat terbatas.</strong>
+        </p>
       </div>
-    </div>
-    <div class="menu-card">
-      <div class="menu-thumb" style="background:#fce4ec">&#127842;</div>
-      <div class="menu-card-body">
-        <h3>Finger Food &amp; Canapes</h3>
-        <p>Elegant bite-sized selections ideal for cocktail parties and corporate events.</p>
-        <span class="tag">Corporate</span>
-      </div>
-    </div>
-    <div class="menu-card">
-      <div class="menu-thumb" style="background:#e3f2fd">&#127874;</div>
-      <div class="menu-card-body">
-        <h3>Celebration Package</h3>
-        <p>Full-course dining experience for weddings, birthdays, and milestone events.</p>
-        <span class="tag">Premium</span>
+      <div class="pr-box-price">
+        <strong>Rp75.000</strong>
+        <span>per box</span>
       </div>
     </div>
   </div>
