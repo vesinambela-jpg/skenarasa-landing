@@ -6,17 +6,17 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skenarasa - Catering for Every Occasion</title>
+  <title>Skenarasa — Stylish Meals, Still Affordable.</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Segoe UI',sans-serif;color:#1a1a1a;background:#fff}
     nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#fff;position:sticky;top:0;box-shadow:0 2px 12px rgba(0,0,0,.06);z-index:100}
-    .logo{font-size:1.6rem;font-weight:800;color:#c0392b;letter-spacing:1px}
-    .logo span{color:#f39c12}
+    .logo{font-size:1.5rem;font-weight:900;color:#000;letter-spacing:3px;text-transform:uppercase}
+    .logo span{color:#000}
     nav a{text-decoration:none;color:#555;font-weight:500;margin-left:28px;transition:color .2s}
-    nav a:hover{color:#c0392b}
-    .nav-cta{background:#c0392b;color:#fff!important;padding:10px 22px;border-radius:25px;font-weight:600}
-    .nav-cta:hover{background:#a93226!important}
+    nav a:hover{color:#AC0000;font-weight:700}
+    .nav-cta{background:#AC0000;color:#fff!important;padding:10px 22px;border-radius:25px;font-weight:600}
+    .nav-cta:hover{background:#8a0000!important}
     .hero{display:flex;align-items:center;justify-content:space-between;padding:80px 60px;background:linear-gradient(135deg,#fff8f0,#fff);min-height:90vh;gap:40px}
     .hero-text{max-width:560px}
     .hero-badge{display:inline-block;background:#fef3e2;color:#e67e22;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase}
@@ -24,10 +24,10 @@
     .hero h1 span{color:#c0392b}
     .hero p{font-size:1.15rem;color:#555;line-height:1.7;margin-bottom:36px}
     .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
-    .btn-primary{background:#c0392b;color:#fff;padding:16px 36px;border-radius:30px;font-size:1rem;font-weight:700;text-decoration:none;transition:background .2s,transform .2s;display:inline-block}
-    .btn-primary:hover{background:#a93226;transform:translateY(-2px)}
-    .btn-secondary{background:transparent;color:#c0392b;padding:16px 36px;border-radius:30px;font-size:1rem;font-weight:700;text-decoration:none;border:2px solid #c0392b;transition:all .2s;display:inline-block}
-    .btn-secondary:hover{background:#c0392b;color:#fff}
+    .btn-primary{background:#AC0000;color:#fff;padding:16px 36px;border-radius:30px;font-size:1rem;font-weight:700;text-decoration:none;transition:background .2s,transform .2s;display:inline-block}
+    .btn-primary:hover{background:#8a0000;transform:translateY(-2px)}
+    .btn-secondary{background:transparent;color:#AC0000;padding:16px 36px;border-radius:30px;font-size:1rem;font-weight:700;text-decoration:none;border:2px solid #AC0000;transition:all .2s;display:inline-block}
+    .btn-secondary:hover{background:#AC0000;color:#fff}
     .hero-image{flex:1;max-width:480px;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
     .hero-placeholder{width:100%;height:420px;background:linear-gradient(135deg,#f39c12,#c0392b);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-size:5rem}
     .hero-placeholder p{font-size:1rem;margin-top:12px;opacity:.85}
@@ -36,16 +36,16 @@
     .stat strong{display:block;font-size:2rem;font-weight:900}
     .stat span{font-size:.9rem;opacity:.85}
     .section{padding:80px 60px}
-    .section-label{text-align:center;font-size:.8rem;font-weight:700;color:#e67e22;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+    .section-label{text-align:center;font-size:.75rem;font-weight:800;color:#AC0000;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
     .section h2{text-align:center;font-size:2.2rem;font-weight:800;color:#1a1a1a;margin-bottom:16px}
     .section-sub{text-align:center;color:#777;font-size:1.05rem;max-width:520px;margin:0 auto 56px}
     .steps{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
     .step{background:#fff;border:1px solid #f0e8e8;border-radius:20px;padding:36px 28px;max-width:260px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .2s}
     .step:hover{transform:translateY(-6px)}
-    .step-num{width:52px;height:52px;background:#fef3e2;color:#e67e22;border-radius:50%;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .step-num{width:52px;height:52px;background:#AC0000;color:#fff;border-radius:50%;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
     .step h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
     .step p{color:#777;font-size:.95rem;line-height:1.6}
-    .menu-section{background:#fff8f0;padding:80px 60px}
+    .menu-section{background:#f9f9f9;padding:80px 60px}
     .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto}
     .menu-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .2s}
     .menu-card:hover{transform:translateY(-6px)}
@@ -53,7 +53,7 @@
     .menu-card-body{padding:20px}
     .menu-card-body h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
     .menu-card-body p{color:#888;font-size:.9rem;line-height:1.5}
-    .tag{display:inline-block;background:#fef3e2;color:#e67e22;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:10px}
+    .tag{display:inline-block;background:#AC0000;color:#fff;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-top:10px}
     .testimonials{padding:80px 60px;background:#fff}
     .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:1000px;margin:0 auto}
     .testi-card{background:#fff8f0;border-radius:20px;padding:32px;border-left:4px solid #c0392b}
@@ -74,8 +74,8 @@
     .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:.95rem;color:#1a1a1a;transition:border-color .2s;outline:none;font-family:inherit}
     .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#c0392b}
     .form-group textarea{resize:vertical;min-height:90px}
-    .form-submit{width:100%;background:#c0392b;color:#fff;border:none;padding:16px;border-radius:30px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px}
-    .form-submit:hover{background:#a93226;transform:translateY(-2px)}
+    .form-submit{width:100%;background:#AC0000;color:#fff;border:none;padding:16px;border-radius:30px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px}
+    .form-submit:hover{background:#8a0000;transform:translateY(-2px)}
     .form-note{text-align:center;font-size:.8rem;color:#aaa;margin-top:14px}
     .form-note span{color:#c0392b}
     .success-msg{display:none}
@@ -87,8 +87,8 @@
     .popup-icon{font-size:3.5rem;margin-bottom:16px}
     .popup-box h3{font-size:1.6rem;font-weight:800;color:#1a1a1a;margin-bottom:10px}
     .popup-box p{color:#666;font-size:1rem;line-height:1.6;margin-bottom:28px}
-    .popup-close{background:#c0392b;color:#fff;border:none;padding:14px 36px;border-radius:30px;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s}
-    .popup-close:hover{background:#a93226}
+    .popup-close{background:#AC0000;color:#fff;border:none;padding:14px 36px;border-radius:30px;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s}
+    .popup-close:hover{background:#8a0000}
     .popup-x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.4rem;color:#aaa;cursor:pointer;line-height:1}
     .popup-x:hover{color:#333}
     /* PRIVACY POLICY POPUP */
@@ -105,24 +105,24 @@
     .privacy-close:hover{background:#a93226}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     /* HERO WITH FORM */
-    .hero-with-form{display:grid;grid-template-columns:1fr 420px;min-height:100vh;background:#1a1a1a}
+    .hero-with-form{display:grid;grid-template-columns:1fr 440px;min-height:100vh;background:#000}
     .hero-image-side{position:relative;overflow:hidden}
-    .hero-image-side img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
-    .hero-image-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.82) 0%,rgba(140,30,20,.65) 100%)}
-    .hero-text-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:60px}
-    .hero-badge{display:inline-block;background:rgba(249,199,74,.25);color:#f9c74f;font-size:.75rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:24px;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(249,199,74,.6);width:fit-content}
-    .hero-text-over h1{font-size:3rem;font-weight:900;line-height:1.15;color:#ffffff;margin-bottom:20px;max-width:520px;text-shadow:0 2px 16px rgba(0,0,0,.5)}
-    .hero-text-over h1 span{color:#f9c74f}
-    .hero-text-over p{font-size:1.1rem;color:rgba(255,255,255,.95);line-height:1.8;max-width:480px;text-shadow:0 1px 8px rgba(0,0,0,.4)}
-    .hero-form-side{background:#fff;display:flex;flex-direction:column;justify-content:center;padding:56px 48px}
-    .hero-form-side h3{font-size:1.4rem;font-weight:800;color:#1a1a1a;margin-bottom:8px}
-    .hero-form-side > p{font-size:.95rem;color:#888;margin-bottom:32px;line-height:1.6}
+    .hero-image-side img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-image-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.45) 60%,rgba(0,0,0,.1) 100%)}
+    .hero-text-over{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:72px 64px}
+    .hero-badge{display:inline-block;background:#AC0000;color:#fff;font-size:.7rem;font-weight:800;padding:6px 16px;border-radius:4px;margin-bottom:28px;letter-spacing:3px;text-transform:uppercase;width:fit-content}
+    .hero-text-over h1{font-size:3.4rem;font-weight:900;line-height:1.1;color:#fff;margin-bottom:24px;max-width:540px;letter-spacing:-1px}
+    .hero-text-over h1 span{color:#AC0000}
+    .hero-text-over p{font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.85;max-width:460px}
+    .hero-form-side{background:#fff;display:flex;flex-direction:column;justify-content:center;padding:64px 52px;border-left:4px solid #AC0000}
+    .hero-form-side h3{font-size:1.5rem;font-weight:900;color:#000;margin-bottom:8px;letter-spacing:-0.5px}
+    .hero-form-side > p{font-size:.9rem;color:#888;margin-bottom:36px;line-height:1.65}
     @media(max-width:900px){
       .hero-with-form{grid-template-columns:1fr;min-height:auto}
-      .hero-image-side{height:320px}
-      .hero-text-over{padding:36px 24px}
-      .hero-text-over h1{font-size:2rem}
-      .hero-form-side{padding:40px 24px}
+      .hero-image-side{height:380px}
+      .hero-text-over{padding:40px 28px}
+      .hero-text-over h1{font-size:2.2rem}
+      .hero-form-side{padding:44px 28px;border-left:none;border-top:4px solid #AC0000}
     }
     .faq-section{padding:80px 60px;background:#fff}
     .faq-list{max-width:720px;margin:0 auto}
@@ -158,9 +158,9 @@
   <div class="popup-box">
     <button class="popup-x" onclick="closePopup()">&times;</button>
     <div class="popup-icon">&#127881;</div>
-    <h3>You're on the list!</h3>
-    <p>Thanks for your interest in Skenarasa. We'll reach out to you on Instagram with an exclusive early-bird offer soon.</p>
-    <button class="popup-close" onclick="closePopup()">Sounds great!</button>
+    <h3>Kamu masuk list!</h3>
+    <p>Makasih udah daftar! Kita bakal reach out ke Instagram kamu dengan penawaran early-bird eksklusif sebelum launch.</p>
+    <button class="popup-close" onclick="closePopup()">Siap, gas!</button>
   </div>
 </div>
 
@@ -206,36 +206,36 @@
 <!-- HERO + LEAD FORM -->
 <section class="hero-with-form" id="lead">
   <div class="hero-image-side">
-    <img src="https://drive.google.com/thumbnail?id=1vJtce9tilMl-tCTVVRXeyKN_RLaqMW_N&sz=w1200" alt="Skenarasa catering spread" />
+    <img src="https://drive.google.com/thumbnail?id=1vJtce9tilMl-tCTVVRXeyKN_RLaqMW_N&sz=w1200" alt="Skenarasa — Stylish Meals, Still Affordable" />
     <div class="hero-image-overlay"></div>
     <div class="hero-text-over">
-      <div class="hero-badge">Online Catering, Delivered</div>
-      <h1>Great Food for <span>Every Occasion</span></h1>
-      <p>Skenarasa brings restaurant-quality catering straight to your event. Browse menus, pick your order, and get it delivered. No hassle, just great food.</p>
+      <div class="hero-badge">Makan Siang yang Beda</div>
+      <h1>Stylish Meals,<br><span>Still Affordable.</span></h1>
+      <p>Bosen pilih-pilih di app, capek nunggu lama, bosen makan yang itu-itu aja? Skenarasa hadir buat kamu yang mau makan enak, estetik, dan tetap terjangkau — langsung ke meja kamu.</p>
     </div>
   </div>
   <div class="hero-form-side">
-    <h3>Be the First to Know</h3>
-    <p>Drop your details and get an exclusive early-bird offer when we launch.</p>
+    <h3>Daftar Early Access</h3>
+    <p>Masuk daftar pertama dan dapatkan penawaran early-bird eksklusif sebelum kami launch.</p>
     <form id="leadForm" onsubmit="handleSubmit(event)">
       <div class="form-group">
-        <label for="fname">Full Name *</label>
+        <label for="fname">Nama Lengkap *</label>
         <input type="text" id="fname" placeholder="e.g. Budi Santoso" required />
       </div>
       <div class="form-group">
-        <label for="instagram">Instagram Username *</label>
+        <label for="instagram">Username Instagram *</label>
         <div style="display:flex;align-items:center;border:1.5px solid #e0e0e0;border-radius:10px;overflow:hidden;transition:border-color .2s" id="igWrapper">
           <span style="padding:12px 14px;background:#f9f9f9;color:#aaa;font-size:.95rem;border-right:1.5px solid #e0e0e0">@</span>
           <input type="text" id="instagram" placeholder="yourusername" required
             style="border:none;border-radius:0;flex:1;padding:12px 14px;font-size:.95rem;outline:none;font-family:inherit"
-            onfocus="document.getElementById('igWrapper').style.borderColor='#c0392b'"
+            onfocus="document.getElementById('igWrapper').style.borderColor='#AC0000'"
             onblur="document.getElementById('igWrapper').style.borderColor='#e0e0e0'" />
         </div>
       </div>
-      <button type="submit" class="form-submit" id="submitBtn">I'm Interested &rarr;</button>
+      <button type="submit" class="form-submit" id="submitBtn">Daftar Sekarang &rarr;</button>
     </form>
     <div class="privacy-link">
-      By submitting, you agree to our <a onclick="openPrivacy()">Privacy Policy</a>.
+      Dengan mendaftar, kamu setuju dengan <a onclick="openPrivacy()">Kebijakan Privasi</a> kami.
     </div>
   </div>
 </section>
@@ -395,7 +395,7 @@
     document.body.style.overflow = '';
     document.getElementById('leadForm').reset();
     document.getElementById('submitBtn').disabled = false;
-    document.getElementById('submitBtn').innerHTML = "I'm Interested &rarr;";
+    document.getElementById('submitBtn').innerHTML = "Daftar Sekarang &rarr;";
   }
 
   function openPrivacy(){
